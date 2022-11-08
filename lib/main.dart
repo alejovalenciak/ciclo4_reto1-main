@@ -148,10 +148,9 @@ class _MyHomePageState extends State<MyHomePage> {
               TextField(
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 controller: txtorigen,
-                decoration: InputDecoration(
-                  labelText: "Cantidad",
-                  hintText: "0",
-                ),
+                decoration:
+                    InputDecoration(labelText: "Cantidad", hintText: "0"),
+                textAlign: TextAlign.right,
               ),
               Divider(),
               TextField(
@@ -160,6 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 controller: txtdestino,
                 decoration:
                     InputDecoration(labelText: "Resultado", hintText: "0"),
+                textAlign: TextAlign.right,
               ),
               Divider(),
               Divider(),
@@ -219,7 +219,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   var result =
                                       (double.parse(txtorigen.text) / 5050);
                                   NumberFormat f =
-                                      new NumberFormat("#,##0.00 EU", "es_EU");
+                                      new NumberFormat("#,##0.00 EUR", "es_EU");
                                   txtdestino.text =
                                       (f.format(result)).toString();
                                 } else if (op1 == "EUR" && op2 == "USD") {
@@ -231,9 +231,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                       (f.format(result)).toString();
                                 } else if (op1 == "USD" && op2 == "EUR") {
                                   var result =
-                                      (double.parse(txtorigen.text) / 5000);
-                                  NumberFormat f =
-                                      new NumberFormat("#,##0.00 US", "es_EUR");
+                                      (double.parse(txtorigen.text) / 0.998);
+                                  NumberFormat f = new NumberFormat(
+                                      "#,##0.00 EUR", "es_EUR");
                                   txtdestino.text =
                                       (f.format(result)).toString();
                                   //txtdestino.text =
